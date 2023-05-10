@@ -46,6 +46,9 @@
         color: white;
         background-color: black;
     }
+    #search-button:hover {
+        background-color: orange;
+    }
     #icon-search {
         font-size: 25px;
     }
@@ -84,3 +87,50 @@
 #right {
     grid-area: right;
 }
+
+.nav-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15rem;
+    border-bottom: 1px solid rgb(168, 168, 168);
+    height: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    a {
+        text-decoration: none;
+        color: black;
+        margin: 1rem;
+        text-align: center;
+    }
+    a:hover {
+        transform: scale(1.1,1.1);
+        transition: 0.5s;
+    }
+    ion-icon{
+        font-size: 25px;
+    }
+    .btn {
+        background-color: white;
+        color: black;
+        width: 15rem;
+        font-size: 20px;
+    }
+    .btn:hover {
+        background-color: orange;
+    }
+    
+    .dropdown-menu {
+        width: 15rem;
+        .dropdown-item {
+            text-align: center;
+            width: 10%;
+            font-size: 15px;
+        }
+        .dropdown-item:hover {
+            background-color: white;
+        }
+    }
+}
+
+    

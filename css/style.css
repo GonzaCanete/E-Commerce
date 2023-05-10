@@ -41,6 +41,9 @@
   color: white;
   background-color: black;
 }
+.header-title #search-button:hover {
+  background-color: orange;
+}
 .header-title #icon-search {
   font-size: 25px;
 }
@@ -80,6 +83,50 @@
 
 #right {
   grid-area: right;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 15rem;
+  border-bottom: 1px solid rgb(168, 168, 168);
+  height: 3rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+}
+.nav-container a {
+  text-decoration: none;
+  color: black;
+  margin: 1rem;
+  text-align: center;
+}
+.nav-container a:hover {
+  transform: scale(1.1, 1.1);
+  transition: 0.5s;
+}
+.nav-container ion-icon {
+  font-size: 25px;
+}
+.nav-container .btn {
+  background-color: white;
+  color: black;
+  width: 15rem;
+  font-size: 20px;
+}
+.nav-container .btn:hover {
+  background-color: orange;
+}
+.nav-container .dropdown-menu {
+  width: 15rem;
+}
+.nav-container .dropdown-menu .dropdown-item {
+  text-align: center;
+  width: 10%;
+  font-size: 15px;
+}
+.nav-container .dropdown-menu .dropdown-item:hover {
+  background-color: white;
 }
 
 /*# sourceMappingURL=style.css.map */
