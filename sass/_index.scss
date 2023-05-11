@@ -135,6 +135,7 @@
 .carousel-item img {
     width: 100%;
     height: 25rem;
+    image-resolution: from-image 600dpi;
 }
 
 .section {
@@ -152,6 +153,36 @@
         transform: scale(1.1,1.1);
         border: 2px solid orange;
         transition: all 0.5s;
+    }
+}
+
+.outstandings {
+    h2 {
+        font-family: 'Montserrat', sans-serif;
+        text-align: center;
+    }
+    .outstanding-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid orange;
+        margin-left: 5rem;
+        margin-right: 5rem;
+        border-radius: 15px;
+        padding: 2rem;
+        gap: 2rem;
+        .card {
+            font-family: 'Montserrat', sans-serif;
+            height: 35rem;
+            img {
+                width: 100%;
+                height: 20rem;
+            }
+            .btn {
+                background-color: orange;
+                border: 0px;
+            }
+        }
     }
 }
 
