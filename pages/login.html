@@ -53,7 +53,74 @@
     </header>
 
     <main>
-        
+      <div class="main" id="mainColumn">
+        <article>
+          <h2>Ingresar</h2>
+        </article>
+        <!-- Div para centrar los inputs -->
+        <div class="form-box">
+          <div class="form-value">
+            <form action="">
+              <!-- Div para aplicar flex en los input -->
+              <div class="inputBox">
+                <!-- Ionicon -->
+                <ion-icon name="mail-outline"></ion-icon>
+                <input type="email" required>
+                <label for="">Email</label>
+              </div>
+              <div class="inputBox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input type="password" required>
+                <label for="">Password</label>
+              </div>
+              <div class="forget">
+                <label for=""><input type="checkbox">Recordarme</label>
+              </div>
+              <button>Ingresar</button>
+              <div class="register">
+                <p>No tengo cuenta <a href="#register">Registrarme</a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+        <article>
+          <h2 id="register">Registrarse</h2>
+        </article>
+        <!-- Repito los divs de ingreso -->
+        <div class="form-box">
+          <form action="">
+            <div class="inputBox">
+              <ion-icon name="person-circle-outline"></ion-icon>
+              <input type="text" required>
+              <label for="">Nombre</label>
+            </div>
+            <div class="inputBox">
+              <ion-icon name="person-circle-outline"></ion-icon>
+              <input type="text" required>
+              <label for="">Apellido</label>
+            </div>
+            <div class="inputBox">
+              <ion-icon name="mail-outline"></ion-icon>
+              <input type="email" required>
+              <label for="">Email</label>
+            </div>
+            <div class="inputBox">
+              <ion-icon name="key-outline"></ion-icon>
+              <input type="password" required>
+              <label for="">Password</label>
+            </div>
+            <div class="inputBox">
+              <ion-icon name="key-outline"></ion-icon>
+              <input type="password" required>
+              <label for="">Confirmar password</label>
+            </div>
+            <div class="forget">
+              <label for=""><input type="checkbox">Recibir noticias</label>
+            </div>
+            <button>Registrarse</button>
+          </form>
+        </div>
+      </div>
     </main>
 
     <footer class="footer">
