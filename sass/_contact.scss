@@ -1,0 +1,38 @@
+.main-contact  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    h2 {
+        font-size: 3rem;
+        font-family: 'Montserrat', sans-serif;
+    }
+    h5{
+        text-align: center;
+        font-size: 25px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    input {
+        width: 40%;
+        height: 3rem;
+        border: 1px solid orange;
+        border-radius: 15px;
+        padding: 1rem;
+    }
+    textarea {
+        width: 40%;
+        border: 1px solid orange;
+        border-radius: 15px;
+        padding: 1rem;
+    }
+    .send-button {
+        width: 10%;
+        height: 2rem;
+        background-color: orange;
+        border: none;
+        font-size: 15px;
+        font-family: 'Montserrat', sans-serif;
+    }
+}
