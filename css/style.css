@@ -181,4 +181,35 @@
   border: 0px;
 }
 
+.footer {
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+  column-gap: 5rem;
+  background-color: rgba(179, 178, 178, 0.356);
+  padding: 2rem;
+}
+.footer li {
+  list-style: none;
+  text-align: center;
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 2rem;
+}
+.footer ion-icon {
+  font-size: 35px;
+}
+.footer #facebook:hover {
+  color: rgb(44, 44, 230);
+}
+.footer #instagram:hover {
+  color: rgb(111, 5, 121);
+}
+.footer #twitter:hover {
+  color: rgb(4, 124, 236);
+}
+.footer #linkedin:hover {
+  color: rgb(2, 2, 128);
+}
+
 /*# sourceMappingURL=style.css.map */
