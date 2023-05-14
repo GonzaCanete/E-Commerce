@@ -17,41 +17,41 @@
 
 // probando registro
 
-const registerUser = []
-const name = document.querySelector("#name");
-name.addEventListener("input",(e)=>{
-    console.log(e.target.value);
-})
-const lastname = document.querySelector("#lastname");
-registerUser.push(lastname.value)
-const email = document.querySelector("#email");
-registerUser.push(email.value)
-const password = document.querySelector("#password");
-registerUser.push(password.value)
-const confirmPassword = document.querySelector("#confirm-password");
-registerUser.push(confirmPassword.value)
-const buttonRegister = document.querySelector("#register-button");
-buttonRegister.addEventListener("click", (e)=>{
-        e.preventDefault();
-        console.log(registerUser);
-        const registerUserStr = JSON.stringify(registerUser);
-        localStorage.setItem("registerUser", registerUserStr);
-    })
+// const registerUser = []
+// const name = document.querySelector("#name");
+// name.addEventListener("input",(e)=>{
+//     console.log(e.target.value);
+// })
+// const lastname = document.querySelector("#lastname");
+// registerUser.push(lastname.value)
+// const email = document.querySelector("#email");
+// registerUser.push(email.value)
+// const password = document.querySelector("#password");
+// registerUser.push(password.value)
+// const confirmPassword = document.querySelector("#confirm-password");
+// registerUser.push(confirmPassword.value)
+// const buttonRegister = document.querySelector("#register-button");
+// buttonRegister.addEventListener("click", (e)=>{
+//         e.preventDefault();
+//         console.log(registerUser);
+//         const registerUserStr = JSON.stringify(registerUser);
+//         localStorage.setItem("registerUser", registerUserStr);
+//     })
 
-// probando login
+// // probando login
 
-const loginEmail = document.querySelector("#login-email");
-const loginPassword = document.querySelector("#login-password");
-const buttonLogin = document.querySelector("#login-button");
-buttonLogin.addEventListener("click", (e)=>{
-    const registerUserRecovery = JSON.parse(localStorage.getItem("registerUser"))
-    e.preventDefault();
-    if (loginEmail.value === registerUserRecovery.email && loginPassword.value === registerUserRecovery.confirmPassword) {
-        console.log("Ingreso correcto");
-    }else{
-        console.log("Ingreso incorrecto");
-    }
-    })
+// const loginEmail = document.querySelector("#login-email");
+// const loginPassword = document.querySelector("#login-password");
+// const buttonLogin = document.querySelector("#login-button");
+// buttonLogin.addEventListener("click", (e)=>{
+//     const registerUserRecovery = JSON.parse(localStorage.getItem("registerUser"))
+//     e.preventDefault();
+//     if (loginEmail.value === registerUserRecovery.email && loginPassword.value === registerUserRecovery.confirmPassword) {
+//         console.log("Ingreso correcto");
+//     }else{
+//         console.log("Ingreso incorrecto");
+//     }
+//     })
 
 
 // local storage guarda por más tiempor que el session storage
@@ -91,3 +91,46 @@ buttonLogin.addEventListener("click", (e)=>{
 
 // const namesRecovery = JSON.parse(localStorage.getItem("nombres"))
 // console.log(namesRecovery);
+
+// Otra prueba de registro con localStorage --- FUNCIONA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// Leo los datos de registro
+const userName = document.querySelector("#name");
+const userLastname = document.querySelector("#lastname");
+const userEmail = document.querySelector("#email");
+const userPassword = document.querySelector("#password");
+const userPassword2 = document.querySelector("#confirm-password");
+const regButton = document.querySelector("#register-button");
+regButton.addEventListener("click", (e)=>{
+    e.preventDefault();
+    console.log(userEmail.value);
+    // Creo un object con los datos ingresados en registro
+    const user = {
+        name: userName.value,
+        lastname: userLastname.value,
+        email: userEmail.value,
+        password: userPassword.value,
+    }
+    //Convierto el object a JSON para almacenarlo en localStorage y no tener que registrarme cada vez que use la página
+    const userStr = JSON.stringify(user);
+    localStorage.setItem("user", userStr);
+})
+
+// Prueba de login 
+// Leo los datos de login
+const userEmailLogin = document.querySelector("#login-email");
+const userPasswordLogin = document.querySelector("#login-password");
+const loginButton = document.querySelector("#login-button");
+loginButton.addEventListener("click", (e)=>{
+    e.preventDefault();
+    // Comparo los datos del email del login con el del object User que creé en el registro, y comparo el password.
+    // El problema es que no se si puedo usar al user así, o tengo que importarlo desde  el localStorage
+    if (userEmailLogin.value === user.email && userPasswordLogin === user.password){
+        // Muestro mensaje de login correcto
+        console.log("Login Correcto");
+    }
+    // Esto lo comento porque tengo dudas de como hacerlo. ¿Como selecciono el dato que quiero traer del localStorage, ej, traer solamente el email del user y el password?
+    // if (userEmailLogin.value === JSON.parse(localStorage.getItem("user")) && userPasswordLogin.value === JSON.parse(localStorage.getItem("user"))){
+    //     // Muestro el mensaje
+    //     console.log("Login Correcto");
+    // }
+})
