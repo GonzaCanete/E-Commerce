@@ -128,7 +128,7 @@ loginButton.addEventListener("click", (e)=>{
         // Muestro mensaje de login correcto
         console.log("Login Correcto");
     }
-    // Esto lo comento porque tengo dudas de como hacerlo. ¿Como selecciono el dato que quiero traer del localStorage, ej, traer solamente el email del user y el password?
+    // Esto lo comento porque tengo dudas de como hacerlo. ¿Como selecciono el dato que quiero traer del localStorage, ej, traer solamente el email del user y el password? Porque entiendo que así traigo el user completo como un string en formato JSON.
     // if (userEmailLogin.value === JSON.parse(localStorage.getItem("user")) && userPasswordLogin.value === JSON.parse(localStorage.getItem("user"))){
     //     // Muestro el mensaje
     //     console.log("Login Correcto");
