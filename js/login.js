@@ -1,24 +1,5 @@
 
-
-// button.addEventListener("input", (e)=>{
-//     console.log(e.target.value);
-// })                   esto me sirve para formularios, lee el input y devuelve el valor completo
-//                      si hago un e.data me devuelve caracter por caracter que se ingresa
-
-
-// // probando agregar productos al carrito
-// const cartTitle = document.querySelector(".card-title");
-// const cartCost = document.querySelector(".card-cost");
-// const addCartButton = document.querySelector("#add-cart");
-// addCartButton.addEventListener("click", (e)=>{
-//     console.log(cartTitle.textContent);
-//     console.log(cartCost.textContent);
-// })
-
-
-
-// Otra prueba de registro con localStorage --- FUNCIONA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// Leo los datos de registro
+// Otra prueba de registro con localStorage
 const userName = document.querySelector("#name");
 const userLastname = document.querySelector("#lastname");
 const userEmail = document.querySelector("#email");
@@ -39,7 +20,7 @@ regButton.addEventListener("click", (e)=>{
     localStorage.setItem("user", userStr);
 })
 
-// Prueba de login  FUNCIONA!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// Prueba de login
 // Leo los datos de login
 const userEmailLogin = document.querySelector("#login-email");
 const userPasswordLogin = document.querySelector("#login-password");
