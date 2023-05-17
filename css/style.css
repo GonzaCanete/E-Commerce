@@ -387,11 +387,13 @@ h2 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  font-size: 25px;
+  font-family: "Montserrat", sans-serif;
 }
 .action button {
   border: none;
   background-color: orange;
-  width: 5rem;
+  width: 8rem;
   border-radius: 15px;
 }
 .action .action-aside-2 {
@@ -403,7 +405,7 @@ h2 {
 .action .action-aside-2 button {
   border: none;
   background-color: orange;
-  width: 5rem;
+  width: 8rem;
   border-radius: 15px;
 }
 
