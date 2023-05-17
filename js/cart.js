@@ -31,11 +31,11 @@ function addProductsToCart() {
                     <p>${product.quantity}</p>
                 </div>
                 <div class="product-price">
-                    <small>Precio</small>
+                    <small>Precio unitario</small>
                     <p>U$S ${product.price}</p>
                 </div>
                 <div class="product-budget">
-                    <small>Subtotal</small>
+                    <small>Total</small>
                     <p>U$S ${product.price * product.quantity}</p>
                 </div>
                 <button id="${product.id} class="delete-item"><ion-icon name="close-circle-outline"></ion-icon></button>

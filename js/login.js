@@ -6,6 +6,8 @@ const userEmail = document.querySelector("#email");
 const userPassword = document.querySelector("#password");
 const userPassword2 = document.querySelector("#confirm-password");
 const regButton = document.querySelector("#register-button");
+
+//leo el evento click para ingresar los datos
 regButton.addEventListener("click", (e)=>{
     console.log(userEmail.value);
     // Creo un object con los datos ingresados en registro
