@@ -52,25 +52,25 @@
         </nav>
     </header>
 
-    <main>
+    <main class="content">
         <h2>Carrito de compras</h2>
-        <div class="contenedor-carrito">
-          <p id="carrito-vacio" class="carrito-vacio">carrito vacio</p>
-          <div id="carrito-productos" class="carrito-productos disabled">
+        <div class="cart-container">
+          <p id="empty-cart" class="empty-cart">carrito vacio</p>
+          <div id="products-container" class="products-container disabled">
             
 
             </div>
           </div>
-          <div id="carrito-acciones" class="carrito-acciones disabled">
-            <div class="carrito-acciones-izquierda">
-              <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar carrito</button>
+          <div id="action" class="action disabled">
+            <div class="action-aside">
+              <button id="empty-cart" onclick="clearCart()" class="carrito-acciones-vaciar">Vaciar carrito</button>
             </div>
-            <div class="carrito-acciones-derecha">
-              <div class="carrito-acciones-total">
+            <div class="action-aside-2">
+              <div class="action-total-budget">
                 <p>Total:</p>
-                <p id="total">U$S 1100</p>
+                <p id="total-buy">U$S 1100</p>
               </div>
-              <button class="carrito-acciones-comprar">Comprar</button>
+              <button class="buy-button">Comprar</button>
             </div>
           </div>
         </div>
