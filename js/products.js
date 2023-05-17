@@ -170,16 +170,6 @@ const products = [
 
 ]
 
-            /* <div class="card" style="width: 18rem;">
-              <img src="./img/i9.jpg" class="card-img-top" alt="procesador intel i9">
-              <div class="card-body">
-                <h5 class="card-title">Intel I9</h5>
-                <p class="card-text">Procesador Core Intel I9 10900k de 10ma generación.</p>
-                <h3 class="card-cost">U$S 900</h3>
-                <button class="btn btn-primary" id="add-cart">Añadir al carro</button>
-              </div>
-            </div> */
-
 const productContainer = document.querySelector(".outstanding-container");
 let addButton = document.querySelectorAll(".btn");
 const cartNumber = document.querySelector("#cart-indicator");
