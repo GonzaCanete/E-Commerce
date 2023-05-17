@@ -170,10 +170,22 @@ const products = [
 
 ]
 
+// traigo los archivos con DOM
 const productContainer = document.querySelector(".outstanding-container");
 let addButton = document.querySelectorAll(".btn");
 const cartNumber = document.querySelector("#cart-indicator");
-const cart = [];
+
+// Creo la variable carrito, un array vacio
+let cart;
+const productsInCartLS = JSON.parse(localStorage.getItem("cart"));
+if (productsInCartLS){
+    cart = productsInCartLS
+}else {
+    cart = [];
+}
+
+
+// funcion para agregar los productos al HTML recorriendo el array de productos y agregandole los atributos
 function addProducts() {
 
     productContainer.innerHTML = "";
@@ -192,25 +204,31 @@ function addProducts() {
 
         productContainer.append(div);
 
+        // llamo la funcion actualizar boton
         refreshButtons()
         
     })
 }
 
+// llamo la funcion agregar productos al HTML
 addProducts();
 
+// funcion para actualizar los botones
 function refreshButtons() {
     addButton = document.querySelectorAll(".btn");
     addButton.forEach(button => {
+        // llamo la funcion agregar productos al carrito mediante un evento click
         button.addEventListener("click", addProductToCart)
         })
         
 }
 
+// funcion para agregar productos al carrito
 function addProductToCart(e) {
+    // comparo el id del evento con el id del producto
     const idButton = e.currentTarget.id;
     const productAdd = products.find(product => product.id == idButton);
-
+    // compruebo si el id del producto ya esta en el carrito, si no esta lo agrego al array y si esta, le sumo una cantidad
     if (cart.some(product => product.id == idButton)) {
         const index = cart.findIndex(product => product.id == idButton);
         cart[index].quantity++;
@@ -218,10 +236,8 @@ function addProductToCart(e) {
         productAdd.quantity = 1;
         cart.push(productAdd);
     }
-    console.log(cart);
+    
+    //Almaceno en localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-function refreshCartNumber() {
-    let cartNumberRefresh = cart.reduce((acc, product) => acc + product.quantity, 0);
-    cartNumber.innerText = cartNumberRefresh;
-}
