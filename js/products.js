@@ -196,7 +196,6 @@ function addProducts() {
         <img src="${product.img}" class="card-img-top" alt="procesador intel i9">
         <div class="card-body">
           <h5 class="card-title">${product.name}</h5>
-          <p class="card-text">Procesador Core Intel I9 10900k de 10ma generación.</p>
           <h3 class="card-cost">U$S ${product.price}</h3>
           <button class="btn btn-primary" id="${product.id}">Añadir al carro</button>
         </div>
