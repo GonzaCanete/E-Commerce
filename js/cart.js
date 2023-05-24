@@ -14,7 +14,7 @@ function addProductsToCart() {
         emptyCartContainer.classList.add("disabled");
         productContainer.classList.remove("disabled");
         actionCartContainer.classList.remove("disabled");
-    
+        // traigo la clase del signo de exclamacion
         productContainer.innerHTML ="";
         // creo para cada producto del array, su correspondiente HTML
         productsInCart.forEach(product => {
