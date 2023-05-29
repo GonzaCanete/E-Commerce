@@ -4,7 +4,7 @@ const productsInCart = JSON.parse(localStorage.getItem("cart"));
 const emptyCartContainer = document.querySelector("#empty-cart");
 const productContainer = document.querySelector("#products-container");
 const actionCartContainer = document.querySelector("#action");
-const cartIndicator = document.querySelector("#cart-indicator");
+
 
 // funcion para agregar productos y mostrarlos en pantalla
 function addProductsToCart() {
@@ -14,8 +14,7 @@ function addProductsToCart() {
         emptyCartContainer.classList.add("disabled");
         productContainer.classList.remove("disabled");
         actionCartContainer.classList.remove("disabled");
-        // traigo la clase del signo de exclamacion
-        cartIndicator.classList.remove("disabled");
+        
         
         productContainer.innerHTML ="";
         // creo para cada producto del array, su correspondiente HTML
