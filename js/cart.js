@@ -14,15 +14,9 @@ function addProductsToCart() {
         emptyCartContainer.classList.add("disabled");
         productContainer.classList.remove("disabled");
         actionCartContainer.classList.remove("disabled");
-<<<<<<< HEAD
     
     
         productContainer.innerHTML = ""
-=======
-        
-        
-        productContainer.innerHTML ="";
->>>>>>> 98acaef439358fd83f2eb3c5ccd1aa9acae45767
         // creo para cada producto del array, su correspondiente HTML
         productsInCart.forEach(product => {
             const div = document.createElement("div");
