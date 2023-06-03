@@ -17,9 +17,11 @@ regButton.addEventListener("click", (e)=>{
         email: userEmail.value,
         password: userPassword.value,
     }
+    
     //Convierto el object a JSON para almacenarlo en localStorage y no tener que registrarme cada vez que use la página
     const userStr = JSON.stringify(user);
     localStorage.setItem("user", userStr);
+    
 })
 
 // Prueba de login
@@ -33,10 +35,18 @@ loginButton.addEventListener("click", (e)=>{
     const userRecovery = JSON.parse(localStorage.getItem("user"));
     if (userEmailLogin.value === userRecovery.email && userPasswordLogin.value === userRecovery.password){
         // Muestro el mensaje
-        console.log("Login Correcto");
+        Swal.fire(
+            'Ingreso correcto',
+            'Bienvenido!',
+            'success'
+          )
     }else{
         // Muestro el mensaje
-        console.log("Login Incorrecto");
+        Swal.fire({
+            icon: 'error',
+            title: 'Usuario o contraseña incorrectos',
+            text: 'No se pudo ingresar',
+          })
     }
 })
 

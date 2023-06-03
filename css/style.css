@@ -3,6 +3,13 @@
   padding: 0;
 }
 
+header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: white;
+}
+
 .header-title {
   width: 100%;
   height: 5rem;
@@ -212,6 +219,10 @@
 }
 .footer #linkedin:hover {
   color: rgb(2, 2, 128);
+}
+
+#item-check {
+  color: orange;
 }
 
 .main-contact {

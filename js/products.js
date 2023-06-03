@@ -1,179 +1,10 @@
-const products = [
-    {
-        id: 1,
-        name: "Elden Ring ps5",
-        price: 70,
-        img: '../img/elden-ring-ps5.jpg'
-    },
-    {
-        id: 2,
-        name: "Joystick ps5",
-        price: 90,
-        img: '../img/joystick-ps5.jpg'
-    },
-    {
-        id: 3,
-        name: "God of War: Ragnarok ps5",
-        price: 70,
-        img: '../img/god-of-war-ragnarok-20221131016774_1.jpg'
-    },
-    {
-        id: 4,
-        name: "Red dead Redemption 2 ps5",
-        price: 45,
-        img: '../img/rdr2-ps5.webp'
-    },
-    {
-        id: 5,
-        name: "Horizon forbidden west ps5",
-        price: 70,
-        img: '../img/horizon-2-forbidden-west-20201124144437_1.jpg'
-    },
-    {
-        id: 6,
-        name: "Consola playstation 5",
-        price: 1100,
-        img: '../img/ps5.jpg'
-    },
-    {
-        id: 7,
-        name: "Resident evil 4: Remake ps5",
-        price: 90,
-        img: '../img/re4-ps5.webp'
-    },
-    {
-        id: 8,
-        name: "Star wars jedi: Survivor ps5",
-        price: 70,
-        img: '../img/star-wars-jedi.jpg'
-    },
-    {
-        id: 9,
-        name: "The last of us: Part 1",
-        price: 70,
-        img: '../img/the-last-of-us-ps5.jpg'
-    },
-    {
-        id: 10,
-        name: "Nintendo switch The Legend of Zelda TOTK Edition",
-        price: 850,
-        img: '../img/nintendo-switch-zelda.webp'
-    },
-    {
-        id: 11,
-        name: "The Legend of Zelda Tears of the Kingdom",
-        price: 105,
-        img: '../img/zelda-tears-of-the-kingdom.webp'
-    },
-    {
-        id: 12,
-        name: "Nintendo switch",
-        price: 550,
-        img: '../img/nintendo-switch.jpg'
-    },
-    {
-        id: 13,
-        name: "Super Mario odyssey",
-        price: 65,
-        img: '../img/super-mario-odyssey-2017102611035_25.jpg'
-    },
-    {
-        id: 14,
-        name: "Xenoblade chronicles 3",
-        price: 60,
-        img: '../img/xenoblade.webp'
-    },
-    {
-        id: 15,
-        name: "Elden Ring xbox",
-        price: 70,
-        img: '../img/elden-ring-xbox.jpg'
-    },
-    {
-        id: 16,
-        name: "Red dead Redemption 2 xbox",
-        price: 45,
-        img: '../img/rdr2-xbox.jpg'
-    },
-    {
-        id: 17,
-        name: "Resident evil 4: Remake xbox",
-        price: 80,
-        img: '../img/re4-xbox.jpg'
-    },
-    {
-        id: 18,
-        name: "Star wars jedi: survivor xbox",
-        price: 75,
-        img: '../img/star-wars-xbox.jpg'
-    },
-    {
-        id: 19,
-        name: "Consola Xbox series X",
-        price: 900,
-        img: '../img/xbox-x.png'
-    },
-    {
-        id: 20,
-        name: "CPU Intel I9",
-        price: 900,
-        img: '../img/i9.jpg'
-    },
-    {
-        id: 21,
-        name: "Memoria M.2",
-        price: 180,
-        img: '../img/m.2.jpg'
-    },
-    {
-        id: 22,
-        name: "Motherboard Gygabyte Z790",
-        price: 250,
-        img: '../img/motherboard.png'
-    },
-    {
-        id: 23,
-        name: "GPU RTX-4090",
-        price: 1800,
-        img: '../img/rtx-4090.png'
-    },
-    {
-        id: 24,
-        name: "Monitor 27'",
-        price: 350,
-        img: '../img/monitor.jpg'
-    },
-    {
-        id: 25,
-        name: "Memoria RAM",
-        price: 70,
-        img: '../img/ram.jpg'
-    },
-    {
-        id: 26,
-        name: "GPU RTX-3080",
-        price: 1400,
-        img: '../img/rtx-3080.jpg'
-    },
-    {
-        id: 27,
-        name: "GPU RTX-4080",
-        price: 1700,
-        img: '../img/rtx-4080.png'
-    },
-    {
-        id: 28,
-        name: "CPU AMD Ryzen 9",
-        price: 700,
-        img: '../img/ryzen9.jpg'
-    }
 
-]
 
 // traigo los archivos con DOM
 const productContainer = document.querySelector(".outstanding-container");
 let addButton = document.querySelectorAll(".btn");
 const cartNumber = document.querySelector("#cart-indicator");
+const itemIndicator = document.querySelector("#cart-indicator-msg");
 
 // Creo la variable carrito, un array vacio
 let cart;
@@ -184,9 +15,23 @@ if (productsInCartLS){
     cart = [];
 }
 
+// traigo los datos de mi json con Fetch
+
+// Declarar la variable products fuera de la función addProducts
+let products;
+
+fetch("./js/data.json")
+    .then(response => response.json())
+    .then(data => {
+        products = data; // Asigno los datos a la variable products para poder usarla en otras funciones
+        addProducts(products);
+        addProductToCart(products);
+    });
+
+
 
 // funcion para agregar los productos al HTML recorriendo el array de productos y agregandole los atributos
-function addProducts() {
+function addProducts(products) {
 
     productContainer.innerHTML = "";
     products.forEach(product => {
@@ -231,10 +76,39 @@ function addProductToCart(e) {
     if (cart.some(product => product.id == idButton)) {
         const index = cart.findIndex(product => product.id == idButton);
         cart[index].quantity++;
+        Toastify({
+            text: "Producto añadido",
+            duration: 3000,
+            destination: "../pages/cart.html",
+            newWindow: true,
+            close: true,
+            gravity: "bottom", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "orange",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
     }else{
         productAdd.quantity = 1;
         cart.push(productAdd);
+        Toastify({
+            text: "Producto añadido",
+            duration: 3000,
+            destination: "../pages/cart.html",
+            newWindow: true,
+            close: true,
+            gravity: "bottom", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "orange",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
     }
+    itemIndicator.innerHTML = `<ion-icon name="checkmark-circle-outline" id="item-check"></ion-icon>`
     
     //Almaceno en localStorage
     localStorage.setItem("cart", JSON.stringify(cart));

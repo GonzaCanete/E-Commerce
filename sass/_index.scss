@@ -5,6 +5,12 @@
     padding: 0;
 }
 
+header {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: white;
+}
 
 .header-title {
     width: 100%;
@@ -218,4 +224,7 @@
     }
 }
 
-    
+
+#item-check {
+    color: orange;
+}
