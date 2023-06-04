@@ -60,6 +60,7 @@ calculateTotal();
 
 
 function clearCart() {
+    // sweet alert con un promise para confirmar la acción de vaciar el carrito
     Swal.fire({
       title: 'Seguro que quiere eliminar el carrito?',
       text: "Si confirma, no hay retorno",

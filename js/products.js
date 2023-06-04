@@ -108,6 +108,7 @@ function addProductToCart(e) {
             onClick: function(){} // Callback after click
           }).showToast();
     }
+    // agrego un icono al lado del carrito para notificar que contiene items
     itemIndicator.innerHTML = `<ion-icon name="checkmark-circle-outline" id="item-check"></ion-icon>`
     
     //Almaceno en localStorage
