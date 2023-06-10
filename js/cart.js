@@ -39,7 +39,7 @@ function addProductsToCart() {
                     <small>Total</small>
                     <p>U$S ${product.price * product.quantity}</p>
                 </div>
-                <button id="${product.id} class="delete-item"><ion-icon name="close-circle-outline"></ion-icon></button>
+                <button id="${product.id} class="delete-item"></ion-icon></button>
                 `
     
             productContainer.append(div);
